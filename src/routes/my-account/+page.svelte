@@ -17,4 +17,5 @@
 	<PipPageLayout/>
 	<Footer/>
 </div>
+
 <Cart/>
