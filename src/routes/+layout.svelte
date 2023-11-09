@@ -1,6 +1,19 @@
 <script>
 	import '../app.scss';
 	import 'iconify-icon';
+	import { setContext } from 'svelte';
+	import Header from '../libs/components/Header.svelte';
+	import Footer from '../libs/components/Footer.svelte';
+	import Cart from '../libs/components/Cart.svelte';
+
+	setContext('site.title', 'Logitech');
+	
+	let rtl = false;
+	function toggleRTL() {
+		rtl=!rtl
+	}
+
+	$:rtlValue = rtl === true ? 'rtl' : 'ltr';
 </script>
 
 <div class="">
@@ -9,7 +22,13 @@
 			<!-- Here you can place your Navigation -->
 		</div>
 		<div>
-			<slot />
+			<button on:click={toggleRTL}>Toggle RTl</button>
+			<div class="grid gap-6">
+				<Header/>
+				<slot />
+				<Footer/>
+			</div>
+			<Cart/>
 		</div>
 	</div>
 </div>

@@ -1,20 +1,14 @@
 <script>
-	import Header from "../libs/components/Header.svelte";
-	import Footer from "../libs/components/Footer.svelte";
-	import PipPageLayout from "../libs/components/PipPageLayout.svelte";
-	import Cart from "../libs/components/Cart.svelte";
+	import BlackButton from "../libs/components/button/BlackButton.svelte";
+	import BlueButton from "../libs/components/button/BlueButton.svelte";
+	import WhiteButton from "../libs/components/button/WhiteButton.svelte";
 
-	let rtl = false;
-	function toggleRTL() {
-		rtl=!rtl
-	}
-
-	$:rtlValue = rtl === true ? 'rtl' : 'ltr';
 </script>
-<button on:click={toggleRTL}>Toggle RTl</button>
-<div class="grid gap-6 {rtlValue}">
-	<Header/>
-	<PipPageLayout/>
-	<Footer/>
+HomePage!!
+
+<div class="flex gap-6">
+
+	<BlackButton>White Button</BlackButton>
+	<WhiteButton>Black Button</WhiteButton>
+	<BlueButton>Blue Button</BlueButton>
 </div>
-<Cart/>

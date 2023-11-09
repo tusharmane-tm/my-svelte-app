@@ -1,12 +1,15 @@
 <script>
-	import { fly } from "svelte/transition";
+	import { fly } from "svelte/transition"; 
     import { cartItems } from "../stores/cartItems";
     import { cartOpen } from "../stores/cartOpen";
 	import CartItem from "./CartItem.svelte";
+	import Backdrop from "./Backdrop.svelte";
     
 </script>
 
 {#if $cartOpen}
+    <Backdrop/>
+
     <div transition:fly={{x: "100%"}} class="fixed top-0 right-0 w-[350px] bg-white h-full border-l">
        <div class="bg-black text-white flex gap-6 justify-between items-center p-3 ">
         Your Cart
